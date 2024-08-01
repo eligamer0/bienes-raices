@@ -1,0 +1,39 @@
+.no-webp .inicio {
+    background-image: url(../img/header.jpg); // Cuando no soporte webp
+}
+.webp .inicio {
+    background-image: url(../img/header.webp); // Cuando soporte webp
+}
+
+.header {
+    background-color: $grisOscuro; // color de fondo,  Importe el color con "$"desde la paleta de colores que está en scss/base/variables.scss
+    padding: 1rem 0 3rem 0; // un relleno de 10px hacia arriba 30 hacia abajo y 0 a los lados 
+
+    &.inicio {
+        background-position: center center; // Para que la imagen se vea desde el centro tanto Hor como Ver
+        background-size: cover;
+        @include tablet {
+            min-height: 70rem; // Esto estaba en 70rem
+        }
+        .contenido__header {
+            @include tablet {
+                min-height: 70rem; // Esto estaba en 70rem
+            }
+        }
+    }
+}
+
+.contenido__header {
+    display: flex; //
+    flex-direction: column;
+    justify-content: space-between;
+
+
+    h1 {
+        text-align: left; // Para poner el texto a la izquerda
+        color: $blanco;
+        font-weight: $bold;
+        line-height: 2;
+        max-width: 70rem;
+    }
+}

@@ -1,0 +1,88 @@
+.derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        align-items: flex-end;
+        
+    }
+
+    .dark_mode_boton {
+        width: 3rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        filter: invert(100%);
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        @include tablet {
+            margin-top: 0;
+        }
+    }
+}
+
+.barra {
+    display: flex; // Para colocar la navegacion al lado de bienes raices 
+    flex-direction: column; // Para que se vea como una columna desde arriba hacia abajo 
+    padding-top: 3rem;
+    align-items: center;
+
+    @include tablet { // Esto es un medeaqueri con el tamaño de una tablet importado de src/base/mixins.scss
+        flex-direction: row; // Para ponerlo horizontal 
+        justify-content: space-between; // Esto lo envia uno del lado izquerdo y otro del lado derecho
+        align-items: flex-end;
+    } // Ahora se ve horizontal en un dispositivo mas grande y vertical en uno mas grande 
+}
+
+.navegacion {
+
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity .5s linear, height .5s linear;
+
+    @include tablet {
+        display: flex; // Para cuando este el tamaño tablet cambie a flex
+        align-items: center; // para centrarlo verticalmente
+        opacity: 1;
+        visibility: visible;
+    }
+    a {
+        color: $blanco; // Importe el color con "$"desde la paleta de colores que está en scss/base/variables.scss
+        text-decoration: none; // Para que no tenga decoraciones por default
+        font-size: 2.2rem; // Para el tamaño de la letra
+        display: block; // para que tome todo el ancho disponible 
+        text-align: center; // para centrarlo 
+        
+        
+        @include tablet {
+            margin-right: 2rem; // para la separacion
+            font-size: 1.8rem; // Para el tamaño de la letra
+
+            &:last-of-type {
+                margin-right: 0; // Para eliminar maring del ultimo elemento 
+            }
+        }
+    }
+}
+
+// ** Menu de hamburguesa ** //
+
+.mobile_menu {
+    @include tablet {
+        display: none;
+    }
+
+    img {
+        width: 5rem;
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}

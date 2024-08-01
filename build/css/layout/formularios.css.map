@@ -1,0 +1,1 @@
+{"version":3,"sources":["layout/formularios.scss","layout/formularios.css"],"names":[],"mappings":"AACI,cACI,gBCAR","file":"formularios.css","sourcesContent":[".formulario {\r\n    p {\r\n        font-size: 1.4rem;\r\n    }\r\n}",".formulario p {\n  font-size: 1.4rem;\n}"]}
