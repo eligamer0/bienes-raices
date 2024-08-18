@@ -1,4 +1,12 @@
 <?php
+
+    require '../../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if (!$auth) {
+        header('Location: /');
+    }
+
     // id valido 
     $id = $_GET['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT); 
@@ -124,7 +132,7 @@
                 // Subir imagen
                 move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
             } else {
-                $nombreImagen = $propiedad('imagen');
+                $nombreImagen = $propiedad['imagen'];
             }
            
 
@@ -146,7 +154,7 @@
         }
     }
 
-    require '../../includes/funciones.php';
+    
     incluirTemplate('header');
 ?>
 <!-- <body class="fondo_contacto"> -->

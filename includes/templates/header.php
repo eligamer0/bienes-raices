@@ -1,3 +1,13 @@
+<?php 
+
+if (!isset($_SESSION)) {
+    session_start();
+    
+}
+
+$auth = $_SESSION['login'] ?? false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +20,7 @@
     <header class="header">
         <div class="contenedor contenido__header">
             <div class="barra">
-                <a href="/bienesraices/index.html">
+                <a href="/bienesraices/index.php">
                     <img src="/bienesraices/build/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
@@ -20,10 +30,13 @@
                 <div class="derecha">
                     <img class="dark_mode_boton" src="/bienesraices/build/img/dark-mode.svg" alt="boton para el modo oscuro">
                     <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="/bienesraices/nosotros.php">Nosotros</a>
+                        <a href="/bienesraices/anuncios.php">Anuncios</a>
+                        <a href="/bienesraices/blog.php">Blog</a>
+                        <a href="/bienesraices/contacto.php">Contacto</a>
+                        <?php if($auth): ?>
+                            <a href="/bienesraices/cerrar-sesion.php">Cerrar Sesión</a>
+                        <?php endif; ?>
                     </nav>
                 </div>
              </div> <!-- .barra -->

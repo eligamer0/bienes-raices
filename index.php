@@ -1,3 +1,14 @@
+<?php 
+
+if (!isset($_SESSION)) {
+    session_start();
+    
+}
+
+$auth = $_SESSION['login'] ?? false;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +21,7 @@
     <header class="header inicio">
         <div class="contenedor contenido__header">
             <div class="barra">
-                <a href="/bienesraices/index.html">
+                <a href="/bienesraices/index.php">
                     <img src="build/img/logo.svg" alt="Logotipo de Bienes Raices">
                 </a>
 
@@ -20,10 +31,14 @@
                 <div class="derecha">
                     <img class="dark_mode_boton" src="build/img/dark-mode.svg" alt="boton para el modo oscuro">
                     <nav class="navegacion">
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="nosotros.php">Nosotros</a>
+                        <a href="anuncios.php">Anuncios</a>
+                        <a href="blog.php">Blog</a>
+                        <a href="contacto.php">Contacto</a>
+                        <a href="login.php">Iniciar Sesión</a>
+                        <?php if($auth): ?>
+                            <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                        <?php endif; ?>
                     </nav>
                 </div>
              </div> <!-- .barra -->
@@ -64,122 +79,23 @@
     <section class="seccion contenedor">
         <h2>Casas y Departamentos en Ventas</h2>
 
-        <div class="contenedor__anuncios">
-            <div class="anuncio"> 
-                <picture>
-                    <source srcset="build/img/anuncio1.webp" type="image/webp">
-                    <source srcset="build/img/anuncio1.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio1.jpg" alt="anuncio">
-                </picture>
+        <?php
+        // Limite de las propiedades
+        $limite = 3;
 
-                <div class="contenido__anuncio"> <!-- 1 -->
-                    <h3>Casa de Lujo en el Lago</h3>
-                    <p>Casa en el lago con excelente vista, acabados de lujos a un excelente precio</p>
-                    <p class="precio">3,000,000 </p>
-
-                    <ul class="iconos__caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>3</p>
-                        </li>
-                    </ul>
-    
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div> <!-- .contenido__anuncio -->
-            </div> <!-- .anuncio -->
-
-            <div class="anuncio"> 
-                <picture>
-                    <source srcset="build/img/anuncio2.webp" type="image/webp">
-                    <source srcset="build/img/anuncio2.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio2.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido__anuncio"> <!-- 2 -->
-                    <h3>Casa Terminados de Lujo</h3>
-                    <p>Casa con diseño moderno, así como tecnologia inteligente y amueblada</p>
-                    <p class="precio">2,000,000 </p>
-
-                    <ul class="iconos__caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>3</p>
-                        </li>
-                    </ul>
-    
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div> <!-- .contenido__anuncio -->
-            </div> <!-- .anuncio -->
-
-            <div class="anuncio"> 
-                <picture>
-                    <source srcset="build/img/anuncio3.webp" type="image/webp">
-                    <source srcset="build/img/anuncio3.jpg" type="image/jpeg">
-                    <img loading="lazy" src="build/img/anuncio3.jpg" alt="anuncio">
-                </picture>
-
-                <div class="contenido__anuncio"> <!-- 3 -->
-                    <h3>Casa con Alberca</h3> 
-                    <p>Casa con alberca y acabados de lujo en la ciudad, excelente oportunidad</p>
-                    <p class="precio">3,000,000 </p>
-
-                    <ul class="iconos__caracteristicas">
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-                            <p>3</p>
-                        </li>
-    
-                        <li>
-                            <img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-                            <p>3</p>
-                        </li>
-                    </ul>
-    
-                    <a href="anuncios.html" class="boton-amarillo-block">
-                        Ver Propiedad
-                    </a>
-                </div> <!-- .contenido__anuncio -->
-            </div> <!-- .anuncio -->
-        </div> <!-- .contenedor__anuncio -->
-
+        //incluyendo anuncios
+        include 'includes/templates/anuncios.php';
+        ?>
+        
         <div class="alinear__derecha">
-            <a href="anuncios.html" class="boton-verde">Ver Todas</a>
+            <a href="anuncios.php" class="boton-verde">Ver Todas</a>
         </div>
     </section>
 
     <section class="imagen_contacto">
         <h2> Encuentra la casa de tus sueños</h2>
         <p>Llena el formulario y un asesor se pondrá en contacto contigo</p>
-        <a href="contacto.html" class="boton-amarillo">Contáctanos</a>
+        <a href="contacto.php" class="boton-amarillo">Contáctanos</a>
     </section>
 
     <div class="contenedor seccion seccion_inferior">
@@ -196,7 +112,7 @@
                 </div>
 
                 <div class="texto_entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Terraza en el techo de tu casa</h4>
                         <p class="informacion_meta">Escrito el: <span>21/06/2024</span> por: <samp>Admin</samp> </p>
 
@@ -217,7 +133,7 @@
                 </div>
 
                 <div class="texto_entrada">
-                    <a href="entrada.html">
+                    <a href="entrada.php">
                         <h4>Guía para decoracion de tu hogar</h4>
                         <p class="informacion_meta">Escrito el: <span>21/06/2024</span> por: <samp>Admin</samp> </p>
 
@@ -245,10 +161,10 @@
     <footer class="footer seccion">
         <div class="contenedor contenido__footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="nosotros.php">Nosotros</a>
+                <a href="anuncios.php">Anuncios</a>
+                <a href="blog.php">Blog</a>
+                <a href="contacto.php">Contacto</a>
             </nav>
         </div>
         <p class="copyright">Todos los derechos Reservados 2024 &copy;</p>

@@ -1,15 +1,15 @@
 <footer class="footer seccion">
         <div class="contenedor contenido__footer">
             <nav class="navegacion">
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="/bienesraices/nosotros.php">Nosotros</a>
+                <a href="/bienesraices/nuncios.php">Anuncios</a>
+                <a href="/bienesraices/blog.php">Blog</a>
+                <a href="/bienesraices/contacto.php">Contacto</a>
             </nav>
         </div>
-        <p class="copyright">Todos los derechos Reservados 2024 &copy;</p>
+        <p class="copyright">Todos los derechos Reservados <?php echo date('Y') ?> &copy;</p>
     </footer>
 
-    <script src="../../build/js/bundle.min.js"></script>
+    <script src="/bienesraices/build/js/bundle.min.js"></script>
 </body>
 </html>
