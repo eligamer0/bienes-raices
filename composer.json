@@ -1,0 +1,17 @@
+{
+    "name": "eliez/bienesraices",
+    "description": "Creando proyecto con POO",
+    "type": "proyec",
+    "authors": [
+        {
+            "name": "Eliezer Rosario",
+            "email": "Eliezer2rosario@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}
