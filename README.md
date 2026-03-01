@@ -5,55 +5,66 @@
 
 📌 Bienes Raíces es una aplicación web dinámica orientada al sector inmobiliario, desarrollada para permitir a los usuarios explorar, comprar o alquilar propiedades mediante una interfaz intuitiva y estructurada.
 
-El proyecto integra frontend moderno, backend en PHP y base de datos relacional en SQL Server, aplicando principios de organización, automatización y optimización del rendimiento.
-🚀 Tecnologías principales
+El proyecto integra frontend moderno, backend en PHP, base de datos relacional en SQL Server y entorno de servidor Apache, aplicando principios de organización, automatización y optimización del rendimiento.
 
-Frontend:
+🚀 Tecnologías principales
+🖥️ Frontend
 
 HTML5
 
 SCSS (compilado con Gulp)
 
-JavaScript (interacciones y optimización)
+JavaScript
 
-Backend:
+⚙️ Backend
 
 PHP
+
 SQL Server
 
-Automatización y optimización:
+🌐 Servidor
 
-Gulp (compilación SCSS, minificación JS)
+Apache (entorno local para ejecución del backend)
 
-Sharp (optimización y conversión de imágenes a WebP y AVIF)
+🔧 Automatización y optimización
 
-⚙️ Características principales
+Gulp (compilación de SCSS y minificación de JavaScript)
 
-🏘️ Visualización de propiedades disponibles para venta y alquiler
-📄 Páginas individuales para cada propiedad
+Sharp (optimización y conversión automática de imágenes a WebP y AVIF)
+
+📂 Características principales
+
+🏘️ Listado dinámico de propiedades disponibles para venta y alquiler
+📄 Páginas individuales con detalles de cada inmueble
+🗄️ Gestión estructurada de datos mediante base de datos relacional
 📱 Diseño responsive adaptable a escritorio, tablet y móvil
-⚡ Optimización de rendimiento mediante minificación de archivos
-🖼️ Procesamiento automático de imágenes en múltiples formatos
-📑 Estructura modular y organizada para escalabilidad futura
+⚡ Optimización de rendimiento mediante minificación y procesamiento de assets
+🖼️ Conversión automática de imágenes a formatos modernos
+📑 Arquitectura modular pensada para escalabilidad futura
 
 🧠 Enfoque técnico
 
-Arquitectura organizada por carpetas (src, build)
+Separación clara entre lógica de negocio (PHP), base de datos (SQL Server) y presentación
 
-Uso de Gulp para automatizar tareas de desarrollo
+Entorno backend ejecutado sobre servidor Apache
 
-Separación clara entre lógica backend (PHP) y presentación
+Organización estructurada del proyecto (src, build)
 
-Optimización para mejorar tiempos de carga
+Automatización del flujo de desarrollo con Gulp
+
+Optimización enfocada en rendimiento y buenas prácticas
 
 🖼️ Demostración en vivo
 
-👉 Ver proyecto en Netlify (versión frontend estática)
+👉 Ver versión frontend estática en Netlify:
+https://bienes-raíces-html-css-js.netlify.app
+
+(La versión completa con PHP y SQL Server se ejecuta en entorno local mediante Apache.)
 
 📫 Autor
 
 👨‍💻 Eliezer Rosario
 💻 Desarrollador Full Stack Junior | Control de calidad básico
 
-LinkedIn
+🔗 LinkedIn
 ✉️ eliezer2rosario@gmail.com
