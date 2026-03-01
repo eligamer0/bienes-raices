@@ -57,7 +57,7 @@ Optimización enfocada en rendimiento y buenas prácticas
 🖼️ Demostración en vivo
 
 👉 Ver versión frontend estática en Netlify:
-https://bienes-raíces-html-css-js.netlify.app
+(https://bienes-raices-html-css-js.netlify.app/)
 
 (La versión completa con PHP y SQL Server se ejecuta en entorno local mediante Apache.)
 
